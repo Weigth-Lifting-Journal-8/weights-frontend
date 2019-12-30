@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "weights",
+  "builds": [
+    {
+      "src": "weights/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "weights/$1" }]
+}
