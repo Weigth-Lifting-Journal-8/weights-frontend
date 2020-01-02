@@ -94,3 +94,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, { register })(FormikForm);
+
+// formik mapStateToProps
