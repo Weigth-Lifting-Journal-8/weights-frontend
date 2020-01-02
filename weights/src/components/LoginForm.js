@@ -54,9 +54,7 @@ const LoginForm = ({ errors, touched, status }) => {
                 Create Account
               </NavLink>
             </div>
-            <div vertical className="divider">
-              |
-            </div>
+            <div className="divider">|</div>
             <div>
               <NavLink
                 className="login-bottom-links-2"
