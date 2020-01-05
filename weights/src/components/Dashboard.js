@@ -11,33 +11,33 @@ export default function Dashboard() {
         <div className="the-div-buttons-container">
           <div className="div">
             <NavLink className="the-navlink" exact to="/WorkoutList">
-              <div> Workout History </div>
+              <div> Workout Journal </div>
             </NavLink>
           </div>
 
           <div className="div">
             <NavLink className="the-navlink" exact to="/emptypage1">
-              <div> Anything (e.g. BMI) </div>
+              <div> Gyms </div>
             </NavLink>
           </div>
           <div className="div">
             <NavLink className="the-navlink" exact to="/emptypage1">
-              <div> Anything (e.g. diet) </div>
+              <div> Diet Tracker </div>
             </NavLink>
           </div>
           <div className="div">
             <NavLink className="the-navlink" exact to="/emptypage1">
-              <div> Anything (e.g. Gyms) </div>
+              <div> BMI </div>
             </NavLink>
           </div>
           <div className="div">
             <NavLink className="the-navlink" exact to="/emptypage1">
-              <div> Anything (e.g. charts) </div>
+              <div> My Charts </div>
             </NavLink>
           </div>
           <div className="div">
             <NavLink className="the-navlink" exact to="/emptypage1">
-              <div> Anything (e.g. rest days) </div>
+              <div> Rest Days </div>
             </NavLink>
           </div>
         </div>
