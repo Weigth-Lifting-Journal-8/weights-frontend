@@ -4,6 +4,7 @@ import LoginForm from "./components/LoginForm.js";
 import Dashboard from "./components/Dashboard.js";
 import EmptyPage1 from "./emptypages/emptyPage1";
 import EmptyPage2 from "./emptypages/emptyPage2";
+import NavBar from "./components/NavBar";
 import { Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute.js";
 
@@ -17,6 +18,7 @@ function App() {
       <PrivateRoute path="/Dashboard" component={Dashboard} />
       <Route exact path="/Register" component={RegistrationForm} />
       <PrivateRoute exact path="/emptypage1" component={EmptyPage1} />
+      <PrivateRoute path="/Dashboard" component={NavBar} />
     </div>
   );
 }
