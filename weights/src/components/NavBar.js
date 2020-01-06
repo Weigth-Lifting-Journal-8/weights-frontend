@@ -15,7 +15,6 @@ export default function NavBar() {
     <Navigation className="navbar">
       <div>
         <div className="nav-icon">
-          {/* link for home */}
           <NavLink className="navlink" to="/Dashboard">
             {" "}
             Home Icon{" "}
@@ -23,7 +22,6 @@ export default function NavBar() {
         </div>
         <h4>Home</h4>
       </div>
-      {/* closes home */}
 
       <div>
         <div className="nav-icon">
@@ -32,7 +30,6 @@ export default function NavBar() {
         </div>
         <h4>Profile</h4>
       </div>
-      {/* closes Profile */}
 
       <div>
         <div className="nav-icon">
@@ -41,11 +38,9 @@ export default function NavBar() {
         </div>
         <h4>Settings</h4>
       </div>
-      {/* closes settings */}
 
       <div>
         <div className="nav-icon">
-          {/* link for more */}
           <NavLink to="/" onClick={() => logout()}>
             {" "}
             Logout Icon{" "}
@@ -53,7 +48,6 @@ export default function NavBar() {
         </div>
         <h4>Logout</h4>
       </div>
-      {/* closes more */}
     </Navigation>
   );
 }
