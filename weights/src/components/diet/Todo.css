@@ -1,0 +1,18 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1550656722-8099c82ab00c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+div.task {
+  text-decoration: none;
+  color: white;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: red;
+}

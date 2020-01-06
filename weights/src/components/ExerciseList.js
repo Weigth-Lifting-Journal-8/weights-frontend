@@ -79,7 +79,7 @@ const ExerciseList = props => {
                     style={{
                       background:
                         selectedExercise === exercise.name
-                          ? "#fe6b6b"
+                          ? "#bd0202"
                           : "white",
                       color:
                         selectedExercise === exercise.name ? "white" : "black"
