@@ -3,6 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 export const IS_REGISTERING = "IS_REGISTERING";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_ERROR = "REGISTER_ERROR";
+//POST = CREATE
 
 export const register = (user, history) => {
   return dispatch => {
@@ -18,5 +19,3 @@ export const register = (user, history) => {
       });
   };
 };
-
-// https://reqres.in/
