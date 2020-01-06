@@ -10,6 +10,7 @@ import NamingWo from "./components/NamingWo";
 import ExerciseList from "./components/ExerciseList";
 import { Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
+import TodoApp from "./components/diet/TodoApp";
 
 import "./App.css";
 
@@ -20,7 +21,7 @@ function App() {
       <Route exact path="/emptypage2" component={EmptyPage2} />
       <PrivateRoute path="/Dashboard" component={Dashboard} />
       <Route exact path="/Register" component={RegistrationForm} />
-      <PrivateRoute exact path="/emptypage1" component={EmptyPage1} />
+      <PrivateRoute exact path="/emptypage1" component={TodoApp} />
       <PrivateRoute exact path="/ExerciseList" component={ExerciseList} />
       <PrivateRoute path="/Dashboard" component={NavBar} />
       <PrivateRoute path="/WorkoutList" component={WorkoutList} />
