@@ -52,7 +52,21 @@ class TodoForm extends Component {
           value={this.state.task}
           name="task"
           onChange={this.handleChanges}
-          placeholder="Enter New Task"
+          placeholder="What did you eat?"
+        />
+        <TodoInput
+          type="text"
+          value={this.state.task}
+          name="task"
+          onChange={this.handleChanges}
+          placeholder="Which food group was it in?"
+        />
+        <TodoInput
+          type="text"
+          value={this.state.task}
+          name="task"
+          onChange={this.handleChanges}
+          placeholder="Ammount of calories?"
         />
         <span>
           <SubmitButton>Submit</SubmitButton>
