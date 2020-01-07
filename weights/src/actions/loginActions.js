@@ -9,7 +9,7 @@ export const postLoginData = (credentials, history) => dispatch => {
   dispatch({ type: LOGIN_START });
 
   axiosWithAuth()
-    .post(`https://weight-lifting-8.herokuapp.com/auth/login`, credentials)
+    .post(`https://weight-lifting-8.herokuapp.com/api/auth/login`, credentials)
 
     .then(response => {
       localStorage.setItem("token", response.data.token);
