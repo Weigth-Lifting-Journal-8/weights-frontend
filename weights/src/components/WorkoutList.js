@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import WorkoutCard from "./WorkoutCard";
 import AddIcon from "../assets/addicon.png";
+import { connect } from "react-redux";
+import {
+  getWorkoutsData,
+  getSets,
+  deleteSetsAndWorkout,
+  deleteWorkout
+} from "../actions/index";
 
 const WorkoutList = props => {
   const [search, setSearch] = useState("");
@@ -55,4 +62,16 @@ const WorkoutList = props => {
   );
 };
 
-export default WorkoutList;
+const mapStateToProps = state => {
+  return {
+    workoutArray: state.workouts.workoutArray,
+    setsArray: state.workouts.setsArray
+  };
+};
+
+export default connect(mapStateToProps, {
+  getWorkoutsData,
+  getSets,
+  deleteSetsAndWorkout,
+  deleteWorkout
+})(WorkoutList);

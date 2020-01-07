@@ -1,6 +1,6 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 
-export const Get_WO_DATA_START = "Get_WO_DATA_START";
+export const GET_WO_DATA_START = "Get_WO_DATA_START";
 export const GET_WO_DATA_SUCCESS = "GET_WO_DATA_SUCCESS";
 export const GET_WO_DATA_FAILURE = "GET_WO_DATA_FAILURE";
 
@@ -9,7 +9,7 @@ export const GET_SETS_SUCCESS = "GET_SETS_SUCCESS";
 export const GET_SETS_FAILURE = "GET_SETS_FAILURE";
 
 export const getWorkoutsData = () => dispatch => {
-  dispatch({ type: Get_WO_DATA_START });
+  dispatch({ type: GET_WO_DATA_START });
 
   axiosWithAuth()
     .get(
@@ -44,14 +44,14 @@ export const getSets = workout => dispatch => {
     });
 };
 
-// export const deleteSetsAndWorkout = journalId => () => {
-//   axiosWithAuth()
-//     .delete(`https://weight-lifting-8.herokuapp.com//api/journals/${journalId}`)
-//     .then(response => {
-//       localStorage.removeItem("journalId");
-//       console.log("journal deleted", response);
-//     })
-//     .catch(error => {
-//       console.log("Error in Delete", error);
-//     });
-// };
+export const deleteSetsAndWorkout = journalId => () => {
+  axiosWithAuth()
+    .delete(`https://weight-lifting-8.herokuapp.com/api/journals/${journalId}`)
+    .then(response => {
+      localStorage.removeItem("journalId");
+      console.log("journal deleted", response);
+    })
+    .catch(error => {
+      console.log("Error in Delete", error);
+    });
+};

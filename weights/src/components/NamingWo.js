@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Xicon from "../assets/Xicon.png";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import moment from "moment";
-// import { makeWorkout, editWorkoutName } from "../actions"; need backend
+import { addWorkout, editWorkoutName } from "../actions";
 
 const NamingWo = props => {
   const [workout, setWorkout] = useState({
@@ -38,15 +38,15 @@ const NamingWo = props => {
             <button
               className="next-btn"
               onClick={() => {
-                // if (localStorage.getItem("journalId")) {
-                //   props.editWorkoutName(workout);
-                //   console.log("next props", props);
-                //   props.history.push("/WorkoutList");
-                // } else {
-                props.makeWorkout(workout);
-                props.history.push("/ExerciseList");
+                if (localStorage.getItem("journalId")) {
+                  props.editWorkoutName(workout);
+                  console.log("next props", props);
+                  props.history.push("/WorkoutList");
+                } else {
+                  props.addWorkout(workout);
+                  props.history.push("/ExerciseList");
+                }
               }}
-              // }
             >
               NEXT
             </button>
@@ -57,6 +57,12 @@ const NamingWo = props => {
   );
 };
 
-export default NamingWo;
+const mapStateToProps = state => {
+  return {
+    userId: state.login.userId
+  };
+};
 
-//https://github.com/Build-Week-Arp/Frontend/blob/new-app/src/components/UploadModal.js
+export default connect(mapStateToProps, { addWorkout, editWorkoutName })(
+  NamingWo
+);

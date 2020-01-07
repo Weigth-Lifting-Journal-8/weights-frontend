@@ -9,7 +9,7 @@ export const register = (user, history) => {
   return dispatch => {
     dispatch({ type: IS_REGISTERING });
     axiosWithAuth()
-      .post("https://weight-lifting-8.herokuapp.com/auth/register", user)
+      .post("https://weight-lifting-8.herokuapp.com/api/auth/register", user)
       .then(res => {
         dispatch({ type: REGISTER_SUCCESS });
         history.push("/");

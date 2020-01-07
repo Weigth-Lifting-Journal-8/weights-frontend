@@ -11,7 +11,7 @@ const initialState = {
   journalId: ""
 };
 
-export const nameWorkoutReducer = (state = initialState, action) => {
+export const nameWoReducer = (state = initialState, action) => {
   switch (action.type) {
     case IS_CREATING_WORKOUT_POST:
       return {

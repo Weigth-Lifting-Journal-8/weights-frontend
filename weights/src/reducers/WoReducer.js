@@ -17,7 +17,7 @@ const initialState = {
   setsError: ""
 };
 
-export const workoutsReducer = (state = initialState, action) => {
+export const WoReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_WO_DATA_START: {
       return {
@@ -67,3 +67,5 @@ export const workoutsReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+//workoutsReducer

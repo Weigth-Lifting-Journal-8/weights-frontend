@@ -9,9 +9,9 @@ import {
 
 const ExerciseList = props => {
   const [exerciseObject, setExerciseObj] = useState({
-    weight: "100kg",
-    reps: 10,
-    sets: 10
+    weight: "100lbs",
+    reps: 5,
+    sets: 5
   });
 
   const [search, setSearch] = useState("");

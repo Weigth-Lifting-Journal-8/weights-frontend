@@ -16,7 +16,7 @@ export const gettingExerciseData = () => dispatch => {
   dispatch({ type: GET_EXERCISE_TYPE_START });
 
   axiosWithAuth()
-    .get("https://backend-buildweek-wlj-mack.herokuapp.com/api/exercises")
+    .get("https://weight-lifting-8.herokuapp.com/api/workouts")
     .then(response => {
       console.log("getExercise data", response);
 
@@ -38,7 +38,7 @@ export const postExercise = exercise => dispatch => {
 
   axiosWithAuth()
     .post(
-      "https://backend-buildweek-wlj-mack.herokuapp.com/api/journalexercise/",
+      "https://weight-lifting-8.herokuapp.com/api/journalexercise/",
       exercise
     )
     .then(response => {
