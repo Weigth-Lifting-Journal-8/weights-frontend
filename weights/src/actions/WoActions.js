@@ -12,7 +12,7 @@ export const getWorkoutsData = () => dispatch => {
   dispatch({ type: GET_WO_DATA_START });
   const userId = localStorage.getItem("id");
   axiosWithAuth()
-    .get(`https://weight-lifting-8.herokuapp.com/api/workouts/${userId}/all`)
+    .get(`https://weight-lifting-8.herokuapp.com/api/workouts/${userId}/all/`)
     .then(response => {
       console.log(response);
       dispatch({ type: GET_WO_DATA_SUCCESS, payload: response.data });

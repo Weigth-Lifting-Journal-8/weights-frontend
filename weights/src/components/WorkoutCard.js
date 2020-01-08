@@ -6,7 +6,7 @@ import CaretOpen from "../assets/caretopen.png";
 import CaretClosed from "../assets/caretclosed.png";
 import DeleteIcon from "../assets/deleteicon.png";
 
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+// import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const WorkoutCard = ({ workout, props }) => {
   const [open, setOpen] = useState(false);
