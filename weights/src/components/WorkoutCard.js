@@ -25,22 +25,25 @@ const WorkoutCard = ({ workout, props }) => {
     setTimeout("location.reload(true);", timeoutPeriod);
   };
 
-  useEffect(() => {
-    axiosWithAuth()
-      .get(
-        `https://weight-lifting-8.herokuapp.com/api/journals/exercises/${workout.userId}/${workout.id}`
-      )
+  // useEffect(
+  //   userId => {
+  //     axiosWithAuth()
+  //       .get(
+  //         `https://weight-lifting-8.herokuapp.com/api/workouts/${workout.id}`
+  //       )
 
-      .then(response => {
-        // console.log("response data", response.data.item)
-        setArray(response.data.item);
-      })
+  //       .then(response => {
+  //         console.log("response data", response);
+  //         setArray(response.data.item);
+  //       })
 
-      .catch(error => {
-        console.log(error);
-      });
-    setDeleted(false);
-  }, [deleted]);
+  //       .catch(error => {
+  //         console.log(error);
+  //       });
+  //     setDeleted(false);
+  //   },
+  //   [deleted]
+  // );
 
   return (
     <div className="workout-card">
@@ -48,7 +51,7 @@ const WorkoutCard = ({ workout, props }) => {
         <div className="name-edit-date">
           <div className="name-edit">
             <h2>
-              {workout.name} - {moment(workout.date).format("l")}
+              {workout.workout_name} - {moment(workout.date).format("l")}
             </h2>
             <img
               src={EditIcon}

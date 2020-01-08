@@ -10,14 +10,11 @@ export const GET_SETS_FAILURE = "GET_SETS_FAILURE";
 
 export const getWorkoutsData = () => dispatch => {
   dispatch({ type: GET_WO_DATA_START });
-
+  const userId = localStorage.getItem("id");
   axiosWithAuth()
-    .get(
-      `https://weight-lifting-8.herokuapp.com/api/journals/users/${localStorage.getItem(
-        "userId"
-      )}`
-    )
+    .get(`https://weight-lifting-8.herokuapp.com/api/workouts/${userId}/all`)
     .then(response => {
+      console.log(response);
       dispatch({ type: GET_WO_DATA_SUCCESS, payload: response.data });
     })
     .catch(error => {
@@ -30,7 +27,7 @@ export const getSets = workout => dispatch => {
 
   axiosWithAuth()
     .get(
-      `https://weight-lifting-8.herokuapp.com/api/journals/exercises/${workout.userId}/${workout.id}`
+      `https://weight-lifting-8.herokuapp.com/api/workouts/exercises/${workout.userId}/${workout.id}`
     )
 
     .then(response => {
@@ -46,7 +43,7 @@ export const getSets = workout => dispatch => {
 
 export const deleteSetsAndWorkout = journalId => () => {
   axiosWithAuth()
-    .delete(`https://weight-lifting-8.herokuapp.com/api/journals/${journalId}`)
+    .delete(`https://weight-lifting-8.herokuapp.com/api/workouts/${journalId}`)
     .then(response => {
       localStorage.removeItem("journalId");
       console.log("journal deleted", response);

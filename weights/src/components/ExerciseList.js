@@ -51,7 +51,7 @@ const ExerciseList = props => {
               props.postExercise(exerciseObject);
             }}
           >
-            <Link to="/RepSets">Save</Link>
+            <Link to="/SetsReps">Save</Link>
           </p>
         </div>
       </div>

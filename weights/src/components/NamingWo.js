@@ -7,11 +7,10 @@ import { addWorkout, editWorkoutName } from "../actions";
 
 const NamingWo = props => {
   const [workout, setWorkout] = useState({
-    userId: localStorage.getItem("userId"),
-    name: "",
+    // userId: localStorage.getItem("userId"),
+    workout_name: "",
     date: moment(Date.now()).format("l")
   });
-  //need to push the workoutName to workout object in API
 
   const inputHandler = e => {
     setWorkout({ ...workout, [e.target.name]: e.target.value });
@@ -30,7 +29,7 @@ const NamingWo = props => {
             <input
               className="type-workout"
               type="text"
-              name="name"
+              name="workout_name"
               value={workout.name}
               placeholder="Name Your Workout"
               onChange={inputHandler}

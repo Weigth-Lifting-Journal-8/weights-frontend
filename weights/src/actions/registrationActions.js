@@ -12,6 +12,7 @@ export const register = (user, history) => {
       .post("https://weight-lifting-8.herokuapp.com/api/auth/register", user)
       .then(res => {
         dispatch({ type: REGISTER_SUCCESS });
+        console.log("The api success at register", user);
         history.push("/");
       })
       .catch(err => {

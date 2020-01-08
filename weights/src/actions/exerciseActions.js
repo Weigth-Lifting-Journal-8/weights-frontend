@@ -12,11 +12,11 @@ export const PUT_UPDATE_WORKOUT_START = "PUT_UPDATE_WORKOUT_START";
 export const PUT_UPDATE_WORKOUT_SUCCESS = "PUT_UPDATE_WORKOUT_SUCCESS";
 export const PUT_UPDATE_WORKOUT_FAILURE = "PUT_UPDATE_WORKOUT_FAILURE";
 
-export const gettingExerciseData = () => dispatch => {
+export const gettingExerciseData = id => dispatch => {
   dispatch({ type: GET_EXERCISE_TYPE_START });
 
   axiosWithAuth()
-    .get("https://weight-lifting-8.herokuapp.com/api/workouts")
+    .get(`https://weight-lifting-8.herokuapp.com/api/workouts/${id}/all`)
     .then(response => {
       console.log("getExercise data", response);
 
@@ -75,15 +75,16 @@ export const updateWorkoutData = workout => dispatch => {
 };
 
 export const deleteWorkout = workoutId => () => {
+  // dispatch({ type: UPDATE_WORKOUT_START });
   axiosWithAuth()
-    .delete(
-      `https://weight-lifting-8.herokuapp.com/api/journalexercise/${workoutId}`
-    )
+    .delete(`https://weight-lifting-8.herokuapp.com/api/workouts/${workoutId}`)
     .then(response => {
+      // dispatch({ type: UPDATE_WORKOUT_SUCCESS, payload: workout });
       localStorage.removeItem("exerciseId");
       console.log("workout deleted", response);
     })
     .catch(error => {
+      // dispatch({ type: UPDATE_WORKOUT_FAILURE, payload: error.response });
       console.log(error);
     });
 };
