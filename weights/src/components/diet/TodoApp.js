@@ -86,7 +86,8 @@ class TodoApp extends Component {
   render() {
     return (
       <AppDiv className="app-div">
-        <h2>{this.state.name}'s Todo List</h2>
+        {/* <h2>{this.state.name}'s Todo List</h2> */}
+        <h2>DIET TRACKER</h2>
         <InputForm className="input-form">
           <TodoForm addTask={this.addTask} />
         </InputForm>

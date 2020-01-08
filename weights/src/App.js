@@ -24,6 +24,7 @@ function App() {
       <Route exact path="/emptypage2" component={EmptyPage2} />
       <PrivateRoute exact path="/emptypage1" component={TodoApp} />
       <PrivateRoute path="/CreateWorkout" component={NamingWo} />
+      <PrivateRoute exact path="/emptypage1" component={TodoApp} />
       <PrivateRoute exact path="/ExerciseList" component={ExerciseList} />
       <PrivateRoute path="/WorkoutList" component={WorkoutList} />
       <PrivateRoute path="/SetsReps" component={SetsReps} />
