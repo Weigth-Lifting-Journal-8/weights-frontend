@@ -17,6 +17,11 @@ const WorkoutList = props => {
     setSearch(e.target.value);
   };
 
+  const userId = localStorage.getItem("id");
+  useEffect(() => {
+    props.getWorkoutsData(userId);
+  }, []);
+
   return (
     <div className="workout-list">
       <div className="workout-gradient">

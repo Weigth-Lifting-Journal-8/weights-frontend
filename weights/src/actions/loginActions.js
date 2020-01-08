@@ -12,9 +12,10 @@ export const postLoginData = (credentials, history) => dispatch => {
     .post(`https://weight-lifting-8.herokuapp.com/api/auth/login`, credentials)
 
     .then(response => {
+      console.log(response.data);
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("id", response.data.id);
-
+      localStorage.setItem("id", response.data.userId);
+      console.log("The apis success at login");
       dispatch({ type: LOGIN_SUCCESS, payload: response.data.id });
 
       history.push("/dashboard");
