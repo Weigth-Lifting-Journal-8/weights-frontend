@@ -5,11 +5,9 @@ export const WkCard = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 50%;
-
-  font-family: helvetica;
   color: #35373b;
   border-radius: 15px;
-  box-shadow: 0px 10px 10px lightgray;
+  box-shadow: 0px 10px 10px #85639d;
   margin: 15px 0;
   padding: 0 15px;
   background: #ffd700; /* fallback for old browsers */
