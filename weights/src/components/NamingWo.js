@@ -4,6 +4,7 @@ import Xicon from "../assets/Xicon.png";
 import { connect } from "react-redux";
 import moment from "moment";
 import { addWorkout, editWorkoutName } from "../actions";
+import { NameWorkoutTop } from "../styles/NameWkStyle";
 
 const NamingWo = props => {
   const [workout, setWorkout] = useState({
@@ -17,7 +18,7 @@ const NamingWo = props => {
   };
 
   return (
-    <div className="NameWorkoutTop">
+    <NameWorkoutTop className="NameWorkoutTop">
       <div className="NameWorkoutContainer">
         <div className="name-workout-card">
           <NavLink className="xbutton" to="/WorkoutList">
@@ -52,7 +53,7 @@ const NamingWo = props => {
           </div>
         </div>
       </div>
-    </div>
+    </NameWorkoutTop>
   );
 };
 
