@@ -5,6 +5,11 @@ import AddIcon from "../assets/addicon.png";
 import CaretOpen from "../assets/caretopen.png";
 import CaretClosed from "../assets/caretclosed.png";
 import DeleteIcon from "../assets/deleteicon.png";
+import {
+  WkCard,
+  WorkoutHeader,
+  WkOutExercises
+} from "../styles/WkOutCardStyle";
 
 // import { axiosWithAuth } from "../utils/axiosWithAuth";
 
@@ -46,9 +51,9 @@ const WorkoutCard = ({ workout, props }) => {
   // );
 
   return (
-    <div className="workout-card">
-      <div className="workout-header">
-        <div className="name-edit-date">
+    <WkCard className="workout-card">
+      <WorkoutHeader className="workout-header">
+        <div className="name-date-edit">
           <div className="name-edit">
             <h2>
               {workout.workout_name} - {moment(workout.date).format("l")}
@@ -125,11 +130,11 @@ const WorkoutCard = ({ workout, props }) => {
             />
           </div>
         )}
-      </div>
+      </WorkoutHeader>
       {open &&
         array.map((exercise, index) => {
           return (
-            <div className="workout-exercise" key={index}>
+            <WkOutExercises className="workout-exercise" key={index}>
               <div className="workout-text-container">
                 <p id="name">{exercise.name}</p>
                 <p>Weight: {exercise.weight}</p>
@@ -160,10 +165,10 @@ const WorkoutCard = ({ workout, props }) => {
                   }}
                 />
               </div>
-            </div>
+            </WkOutExercises>
           );
         })}
-    </div>
+    </WkCard>
   );
 };
 

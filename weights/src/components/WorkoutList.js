@@ -9,6 +9,7 @@ import {
   deleteSetsAndWorkout,
   deleteWorkout
 } from "../actions/index";
+import { NavLinkDivStyle } from "../styles/WkOutListStyle";
 
 const WorkoutList = props => {
   const [search, setSearch] = useState("");
@@ -55,14 +56,14 @@ const WorkoutList = props => {
               <WorkoutCard key={workout.id} workout={workout} props={props} />
             ))}
       </div>
-      <div className="add-workout-button">
+      <NavLinkDivStyle className="add-workout-button">
         <NavLink className="add-button" exact to="/NameWorkout">
           <img
             src={AddIcon}
             onClick={() => localStorage.removeItem("journalId")}
-          />
+          />{" "}
         </NavLink>
-      </div>
+      </NavLinkDivStyle>
     </div>
   );
 };
