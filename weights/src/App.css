@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.login-form{
+    height: 100vh;
+} 
+
+.form-container{
+    margin: auto auto auto;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.field-input{
+    min-width: 280px; height: 35px; width: calc(50vw - 20px);
+    margin: 0; margin-top: 5px; border-radius: 5px;
+    color: black; font-size: large;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-button{
+    display: block;
+    min-width: 75px; width: 15vw;
+    height: 35px;
+    border-radius: 5px; margin: 0 auto 0;
+    margin-top: 10px; margin-bottom: 10px;
+    background-color: yellow;
+    font-weight: bold; font-size: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.login-button:hover{
+    background-color: orange;
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login-bottom-links{
+    text-decoration: none;
+    color: yellow;
+    display: inline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottomlogin{
+    display: flex; flex-direction: row;  justify-content: center;
 }
+
+.bottom-section{
+    display: flex;
+    background-position: absolute; top:0; left:0;
+    background-image: url("https://images.unsplash.com/photo-1491911923017-19f90d8d7f83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80");
+    height: 100vh; width: 100vw;
+    background-size: cover; background-repeat: no-repeat;
+ 
+}
+
+.the-div-buttons-container{
+    display: flex; flex-direction: row;
+    flex-wrap: wrap; justify-content: space-between;
+    width: 80vw;
+    margin: auto auto auto;
+}
+
+.the-navlink{
+    text-decoration: none;
+}
+
+.div{
+    display: inline-block; 
+    width: 25%; margin: 10px; padding:20px;
+    opacity: 70%; height: 190px;
+    border-radius: 7px; 
+    background-color: yellow;
+    font-weight: bolder;  
+    
+}
+
+
+
+.div:hover{
+    background-color: orange;
+    transform: scale(1.2, 1);
+    text-shadow: 0 0 3px rgb(152, 236, 126);
+}
+
+
+

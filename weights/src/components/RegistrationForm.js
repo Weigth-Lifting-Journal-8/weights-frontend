@@ -5,14 +5,38 @@ import { register } from "../actions";
 import { NavLink } from "react-router-dom";
 import * as Yup from "yup";
 
+import Styled from 'styled-components';
+
+const Regis = Styled.div`
+  background-position: absolute; top:0; left:0;
+  background-color: gray;
+  background-image: url("https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80");
+  height: 100vh; width: 100vw;
+  background-size: cover; background-repeat: no-repeat;
+  display: flex;
+`;
+
+const Input = Styled.div`
+border: 1px solid black;
+min-width: 300px; width: 50vw;
+min-height: 400px;
+background-color: black;
+padding-left: 20px; padding-right: 10px;
+opacity: 80%;
+display: flex; flex-direction: column;
+    justify-content: center;
+
+
+`
+
 const RegistrationForm = ({ errors, touched }) => {
   return (
-    <div className="registerform">
-      <div className="image-div"></div>
-      <Form>
-        <div className="input">
+    <Regis className="registerform">
+     <Form className="form-container"> 
+     <Input>
+        <div className="field-input">
           <Field
-            className="fieldinput"
+            className="field-input"
             type="text"
             name="firstName"
             placeholder="First Name"
@@ -20,9 +44,9 @@ const RegistrationForm = ({ errors, touched }) => {
           {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
         </div>
 
-        <div className="input">
+        <div className="field-input">
           <Field
-            className="fieldinput"
+            className="field-input"
             type="text"
             name="lastName"
             placeholder="Last Name"
@@ -30,9 +54,9 @@ const RegistrationForm = ({ errors, touched }) => {
           {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
         </div>
 
-        <div className="input">
+        <div className="field-input">
           <Field
-            className="fieldinput"
+            className="field-input"
             type="email"
             name="email"
             placeholder="Email"
@@ -42,7 +66,7 @@ const RegistrationForm = ({ errors, touched }) => {
 
         <div className="input">
           <Field
-            className="fieldinput"
+            className="field-input"
             type="password"
             name="password"
             placeholder="Password"
@@ -50,15 +74,17 @@ const RegistrationForm = ({ errors, touched }) => {
           {touched.password && errors.password && <p>{errors.password}</p>}
         </div>
 
-        <button type="submit"> Sign Up! </button>
-      </Form>
+        <button className="login-button" type="submit"> Sign Up! </button>
+      
       <NavLink exact to={`/`}>
-        <button to="/" className="goback" type="submit">
+        <button className="login-button" to="/"  type="submit">
           {" "}
           Login{" "}
         </button>
       </NavLink>
-    </div>
+      </Input>
+      </Form>
+    </Regis>
   );
 };
 
