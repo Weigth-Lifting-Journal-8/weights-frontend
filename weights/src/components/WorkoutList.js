@@ -9,7 +9,12 @@ import {
   deleteSetsAndWorkout,
   deleteWorkout
 } from "../actions/index";
-import { NavLinkDivStyle } from "../styles/WkOutListStyle";
+import {
+  NavLinkDivStyle,
+  TitleList,
+  SearchBar,
+  SearchBarInput
+} from "../styles/WkOutListStyle";
 
 const WorkoutList = props => {
   const [search, setSearch] = useState("");
@@ -26,15 +31,15 @@ const WorkoutList = props => {
   return (
     <div className="workout-list">
       <div className="workout-gradient">
-        <h1>My Workout Journal</h1>
-        <form className="search-bar">
-          <input
+        <TitleList>My Workout Journal</TitleList>
+        <SearchBar className="search-bar">
+          <SearchBarInput
             type="text"
             name="search"
             onChange={searchHandler}
-            placeholder="Search by Workout Date"
+            placeholder="Search by Date"
           />
-        </form>
+        </SearchBar>
       </div>
 
       <div className="weight-list">

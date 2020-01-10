@@ -34,11 +34,12 @@ export const gettingExerciseData = id => dispatch => {
 };
 
 export const postExercise = exercise => dispatch => {
+  const userId = localStorage.getItem("id");
   dispatch({ type: POST_EXERCISE_START });
 
   axiosWithAuth()
     .post(
-      "https://weight-lifting-8.herokuapp.com/api/journalexercise/",
+      `https://weight-lifting-8.herokuapp.com/api/workouts/${userId}`,
       exercise
     )
     .then(response => {
