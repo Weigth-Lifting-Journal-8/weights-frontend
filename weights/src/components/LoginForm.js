@@ -10,6 +10,33 @@ import { connect } from "react-redux";
 
 // axios post action
 import { postLoginData } from "../actions/index.js";
+import Styled from 'styled-components';
+
+
+const LogIn = Styled.div`
+  background-position: absolute; top:0; left:0;
+  background-color: gray;
+  background-image: url("https://images.unsplash.com/photo-1528304270437-714a2d6fbb6b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&dl=juan-pablo-rodriguez-X6jtULYJQz8-unsplash.jpg");
+  height: 100vh; width: 100vw;
+  background-size: cover; background-repeat: no-repeat;
+  display: flex;
+`;
+
+const Input = Styled.div`
+border: 1px solid black;
+min-width: 300px; width: 50vw;
+min-height: 400px;
+background-color: black;
+padding-left: 20px; padding-right: 10px;
+opacity: 80%;
+display: flex; flex-direction: column;
+    justify-content: center;
+
+
+`
+
+const Fields = Styled.div`
+`
 
 const LoginForm = ({ errors, touched, status }) => {
   const [login, setLogin] = useState({});
@@ -20,9 +47,10 @@ const LoginForm = ({ errors, touched, status }) => {
   }, [status]);
 
   return (
-    <div className="login-form">
+    <LogIn className="login-form">
       <Form className="form-container">
-        <div className="email-input">
+        <Input>
+        <Fields className="email-input">
           <Field
             className="field-input"
             name="email"
@@ -32,8 +60,8 @@ const LoginForm = ({ errors, touched, status }) => {
           {touched.email && <errors className="email"></errors> && (
             <p className="error">{errors.email}</p>
           )}
-        </div>
-        <div className="password-input">
+        </Fields>
+        <Fields className="password-input">
           <Field
             className="field-input"
             name="password"
@@ -43,21 +71,22 @@ const LoginForm = ({ errors, touched, status }) => {
           {touched.password && errors.password && (
             <p className="error">{errors.password}</p>
           )}
-        </div>
+        </Fields>
+        
         <button className="login-button" type="submit">
           LOGIN
         </button>
         <div>
           <div className="bottomlogin" columns={2} relaxed="very">
             <div>
-              <NavLink className="login-bottom-links-1" exact to={`/Register`}>
+              <NavLink className="login-bottom-links" exact to={`/Register`}>
                 Create Account
               </NavLink>
             </div>
             <div className="divider">|</div>
             <div>
               <NavLink
-                className="login-bottom-links-2"
+                className="login-bottom-links"
                 exact
                 to={`/emptypage2`}
               >
@@ -66,8 +95,9 @@ const LoginForm = ({ errors, touched, status }) => {
             </div>
           </div>
         </div>
+        </Input>
       </Form>
-    </div>
+    </LogIn>
   );
 };
 const FormikLoginForm = withFormik({
