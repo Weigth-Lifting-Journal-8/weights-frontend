@@ -1,16 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Style from 'styled-components';
+import Style from "styled-components";
 
 const Menu = Style.div`
-text-decoration: none !important; 
+
 color: black;
 padding: 15%;
 vertical-align: center;
 font-weight: bolder;
 font-size: 35px;
 
-`
+`;
 
 export default function Dashboard() {
   return (
