@@ -4,7 +4,7 @@ export const WkCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 60%;
   color: #35373b;
   border-radius: 15px;
   box-shadow: 0px 10px 10px #85639d;
